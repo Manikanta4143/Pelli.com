@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pelli.com – Find Your Perfect Match 💍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Pelli<span class="gold">.com</span></div>
+    <nav class="nav-actions">
+      <a href="about.html" class="nav-link">About</a>
+      <button id="openLogin" class="nav-btn">Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <h1>Find Your Perfect Match 💖</h1>
+        <p class="subtitle">Telugu Matrimony Platform made with trust, love, and connections.</p>
+        <div class="hero-ctas">
+          <button id="openSignup" class="primary-cta">Start Your Journey</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="feature"><h3>💌 Sign Up</h3><p>Create your profile in just a few steps</p></article>
+      <article class="feature"><h3>💞 Connect</h3><p>Find matches that truly align with your heart</p></article>
+      <article class="feature"><h3>💬 Interact</h3><p>Chat, express, and take the next step in your journey</p></article>
+    </section>
+
+    <section id="about" class="about" style="
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+">
+  <h2 style="
+    font-size: 28px;
+    color: #c59d5f;
+    margin-bottom: 16px;
+    font-weight: 600;
+  ">
+    About Us
+  </h2>
+
+  <p style="
+    max-width: 750px;
+    margin: 0 auto;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.8;
+  ">
+    <strong>Pelli.com</strong> is a Telugu matrimony platform built on trust, respect, and meaningful connections.  
+    We combine tradition with technology to help you find your ideal life partner in a safe, transparent, and personalized way.  
+    Whether you’re seeking a match within your community or beyond, Pelli.com ensures every profile is verified, genuine,  
+    and designed to help build lifelong relationships — one beautiful story at a time.
+  </p>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Pelli.com | Reserved by Mani</p>
+  </footer>
+
+  <!-- LOGIN modal -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="closeLogin">&times;</button>
+      <h3>Welcome back — Please login</h3>
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter Email" required>
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter Password" required>
+        <button type="submit" class="primary-cta full">Login</button>
+        <div class="form-small">
+          <a href="forgot.html" id="openForgotFromLogin">Forgot Password?</a>
+          <span class="sep">|</span>
+          <span>New to Pelli.com?</span>
+          <a href="#" id="openSignupFromLogin">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SIGNUP modal -->
+  <div id="signupModal" class="modal" aria-hidden="true">
+    <div class="modal-panel wide">
+      <button class="modal-close" id="closeSignup">&times;</button>
+      <h3>Create your account</h3>
+      <form id="signupForm" enctype="multipart/form-data">
+        <div class="steps">
+          <div class="step-dot active" data-step="1">1</div>
+          <div class="step-dot" data-step="2">2</div>
+          <div class="step-dot" data-step="3">3</div>
+          <div class="step-dot" data-step="4">4</div>
+        </div>
+
+        <!-- Slide 1 -->
+        <section class="slide active" id="s1">
+          <label>This profile is for</label>
+          <div class="options-group">
+            <button type="button" class="option-btn" data-value="Myself">Myself</button>
+            <button type="button" class="option-btn" data-value="Brother/Sister">Brother / Sister</button>
+            <button type="button" class="option-btn" data-value="Son/Daughter">Son / Daughter</button>
+          </div>
+
+          <label>Gender</label>
+          <div class="options-group">
+            <button type="button" class="gender-btn" data-value="Male">Male</button>
+            <button type="button" class="gender-btn" data-value="Female">Female</button>
+          </div>
+
+          <div class="modal-actions"><button type="button" class="btn next" id="next1" disabled>Next →</button></div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide" id="s2">
+          <label>Name</label>
+          <div class="row">
+            <input type="text" id="firstName" placeholder="First name" required>
+            <input type="text" id="lastName" placeholder="Last name" required>
+          </div>
+          <label>Date of Birth</label>
+          <input type="date" id="dob" required>
+          <label>Education</label>
+          <input type="text" id="education" placeholder="Education / Degree">
+          <div class="modal-actions two">
+            <button type="button" class="btn prev" data-prev="1">← Back</button>
+            <button type="button" class="btn next" id="next2" disabled>Next →</button>
+          </div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide" id="s3">
+          <label>Religion</label>
+          <select id="religion" required><option value="">Select</option><option>Hindu</option><option>Muslim</option><option>Christian</option><option>Other</option></select>
+          <label>Community</label>
+          <select id="community" required><option value="">Select</option><option>Telugu</option><option>Tamil</option><option>Kannada</option><option>Malayali</option><option>Other</option></select>
+          <label>Lives In</label>
+          <select id="livingIn" required><option value="">Select</option><option>India</option><option>UK</option><option>Europe</option><option>USA</option></select>
+          <label>State</label>
+          <input type="text" id="state" placeholder="State">
+          <label>City</label>
+          <input type="text" id="city" placeholder="City" required>
+          <div class="modal-actions two">
+            <button type="button" class="btn prev" data-prev="2">← Back</button>
+            <button type="button" class="btn next" id="next3" disabled>Next →</button>
+          </div>
+        </section>
+
+        <!-- Slide 4 -->
+        <section class="slide" id="s4">
+          <label>Upload Profile Image (jpg/jpeg/png)</label>
+          <input type="file" id="profileImage" name="profileImage" accept="image/*" required>
+
+          <label>Contact & Password</label>
+          <input type="email" id="finalEmail" name="email" placeholder="Email ID" required>
+          <input type="tel" id="finalPhone" name="phone" placeholder="Phone number" required>
+          <input type="password" id="finalPassword" name="password" placeholder="Password" required>
+          <input type="password" id="finalConfirm" placeholder="Re-type Password" required>
+          <div class="password-note" id="pwNote"></div>
+          <div class="modal-actions two">
+            <button type="button" class="btn prev" data-prev="3">← Back</button>
+            <button type="submit" class="btn primary" id="signupSubmit" disabled>Sign Up</button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

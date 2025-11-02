@@ -1,0 +1,58 @@
+/* frontend/style.css - modern & sleek */
+:root{--accent:#0f172a;--accent-2:#0ea5b7;--muted:#6b7280}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#f8fafc;color:var(--accent);line-height:1.5}
+a{color:var(--accent-2);text-decoration:none}
+.navbar{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:transparent;z-index:50}
+.logo{font-weight:800;font-size:20px;color:var(--accent)}.logo .gold{color:var(--accent-2);margin-left:4px}
+.nav-actions{display:flex;gap:16px;align-items:center}
+.nav-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:8px;cursor:pointer}
+.hero{height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background-image:url('https://www.namastegod.com/static/ce66a4509d8d0f6360fc8cfedabd0aa0/e5715/Indian-Traditional-Marriage.png');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.3))}
+.hero-inner{position:relative;z-index:10;color:#fff;padding:28px;border-radius:12px;max-width:900px}
+.hero-inner h1{font-size:40px;margin-bottom:10px}
+.subtitle{opacity:0.95;margin-bottom:16px}
+.primary-cta{background:linear-gradient(90deg,#06b6d4,#3b82f6);border:none;padding:12px 26px;border-radius:30px;color:#fff;font-weight:700;cursor:pointer}
+.features{display:flex;gap:18px;justify-content:center;padding:36px 24px}
+.feature{width:240px;background:#fff;border-radius:12px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+.modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.6);z-index:200;justify-content:center;align-items:center;padding:24px}
+.modal-panel{background:#fff;border-radius:12px;padding:22px;max-width:640px;width:100%;position:relative;box-shadow:0 12px 40px rgba(2,6,23,0.12)}
+.modal-panel.wide{max-width:780px}
+.modal-close{position:absolute;right:12px;top:10px;border:none;background:transparent;font-size:24px;cursor:pointer}
+.steps{display:flex;gap:8px;justify-content:center;margin-bottom:12px}
+.step-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f1f5f9;color:#334155;font-weight:700}
+.step-dot.active{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff}
+.slide{display:none}
+.slide.active{display:block}
+input,select{width:100%;padding:10px;border:1px solid #e6eef2;border-radius:10px;margin-top:8px}
+.row{display:flex;gap:10px}
+.row input{flex:1}
+.options-group{display:flex;gap:8px;margin-top:8px}
+.option-btn, .gender-btn{padding:10px 14px;border-radius:10px;border:1px solid #e6eef2;background:#fff;cursor:pointer}
+.option-btn.active, .gender-btn.active{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff;border-color:transparent}
+.modal-actions{margin-top:14px;text-align:right}
+.modal-actions.two{display:flex;gap:10px;justify-content:space-between}
+.btn{padding:10px 14px;border-radius:10px;border:none;background:#111827;color:#fff;cursor:pointer}
+.btn.next{background:linear-gradient(90deg,#06b6d4,#3b82f6)}
+.btn.prev{background:#475569}
+.btn.primary{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff}
+.password-note{font-size:13px;color:#ef4444;margin-top:6px}
+.site-footer{text-align:center;padding:18px;color:#666}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06);overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:12px}
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eee;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body h3{margin:0 0 8px 0}
+.card-body .wa{display:inline-block;margin-top:8px;background:#25D366;padding:8px 10px;border-radius:8px;color:#fff}
+@media (max-width:720px){.row{flex-direction:column}.hero-inner h1{font-size:28px}}
+/* small helpers */
+.form-small{margin-top:10px;text-align:center;color:#6b7280}

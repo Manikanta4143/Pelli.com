@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | Pelli.com</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fff0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: #e63946;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #e63946;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #c1121f;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+    }
+
+    .option-btn, .gender-btn {
+      background: #f9dcdc;
+      border: 1px solid #e63946;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+
+    .option-btn.active, .gender-btn.active {
+      background: #e63946;
+      color: white;
+    }
+
+    .switch-page {
+      margin-top: 15px;
+    }
+
+    .switch-page a {
+      color: #e63946;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="signup-page">
+  <div class="signup-container">
+    <h2>Create Your Profile 💞</h2>
+    <form id="signupForm" enctype="multipart/form-data">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <h3>The profile is for</h3>
+        <div class="button-group">
+          <button type="button" class="option-btn" data-value="Self">Self</button>
+          <button type="button" class="option-btn" data-value="Son/Daughter">Son / Daughter</button>
+          <button type="button" class="option-btn" data-value="Brother/Sister">Brother / Sister</button>
+        </div>
+
+        <h3>Gender</h3>
+        <div class="button-group">
+          <button type="button" class="gender-btn" data-value="Male">Male</button>
+          <button type="button" class="gender-btn" data-value="Female">Female</button>
+        </div>
+        <button type="button" class="next-btn">Next ➜</button>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <h3>Personal Details</h3>
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+        <label>Date of Birth</label>
+        <input type="date" required />
+        <button type="button" class="prev-btn">⬅ Back</button>
+        <button type="button" class="next-btn">Next ➜</button>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <h3>Religious Information</h3>
+        <label>Religion</label>
+        <select required>
+          <option value="">Select Religion</option>
+          <option>Hindu</option>
+          <option>Muslim</option>
+          <option>Christian</option>
+          <option>Other</option>
+        </select>
+
+        <input type="text" placeholder="Community" required />
+        <input type="text" placeholder="Living In (City)" required />
+
+        <button type="button" class="prev-btn">⬅ Back</button>
+        <button type="button" class="next-btn">Next ➜</button>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide">
+        <h3>Login Information</h3>
+        <input type="email" placeholder="Email ID" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" id="confirmPassword" placeholder="Re-type Password" required />
+
+        <h3>Upload Profile Image (JPG only)</h3>
+        <input type="file" id="profileImage" accept=".jpg" required />
+
+        <p id="passwordError" class="error-message"></p>
+
+        <button type="button" class="prev-btn">⬅ Back</button>
+        <button type="submit" class="submit-btn">Sign Up ✅</button>
+      </div>
+    </form>
+
+    <p class="switch-page">Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

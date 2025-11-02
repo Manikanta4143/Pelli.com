@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login | Pelli.com</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h2>Welcome Back 💖</h2>
+    <form id="pageLoginForm">
+      <input type="email" id="pageLoginEmail" placeholder="Email ID" required>
+      <input type="password" id="pageLoginPassword" placeholder="Password" required>
+      <button type="submit" class="btn primary">Login</button>
+    </form>
+    <p class="switch-page"><a href="forgot.html">Forgot Password?</a> | <a href="index.html">Home</a></p>
+  </div>
+  <script>
+    // simple page login to reuse same backend endpoint
+    document.getElementById('pageLoginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('pageLoginEmail').value;
+      const password = document.getElementById('pageLoginPassword').value;
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/login', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+          window.location.href = 'main.html';
+        } else alert(data.message || 'Login failed');
+      } catch (err) { alert('Server error'); console.error(err); }
+    });
+  </script>
+</body>
+</html>
