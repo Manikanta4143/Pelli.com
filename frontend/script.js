@@ -1,4 +1,5 @@
-// frontend/script.js - modal, signup slides, login, signup submit
+// ✅ BASE URL for deployed backend
+const BASE_URL = "https://pelli-com.onrender.com";
 
 // MODALS
 const loginModal = document.getElementById('loginModal');
@@ -153,17 +154,17 @@ document.getElementById('signupForm').addEventListener('submit', async (ev) => {
     formData.append('password', password);
     if (profileImage) formData.append('profileImage', profileImage);
 
-    const res = await fetch('http://localhost:5000/api/auth/register', { method: 'POST', body: formData });
+    const res = await fetch(`${BASE_URL}/api/auth/register`, { method: 'POST', body: formData });
     const data = await res.json();
     if (res.ok) {
-      // store user and redirect to main
       localStorage.setItem('user', JSON.stringify(data.user));
       window.location.href = 'main.html';
     } else {
       alert(data.message || 'Registration failed');
     }
   } catch (err) {
-    console.error('Signup error', err); alert('Something went wrong. Please check server console.');
+    console.error('Signup error', err);
+    alert('Something went wrong. Please check server console.');
   }
 });
 
@@ -173,8 +174,10 @@ document.getElementById('loginForm').addEventListener('submit', async (ev) => {
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
   try {
-    const res = await fetch('http://localhost:5000/api/auth/login', {
-      method:'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ email, password })
+    const res = await fetch(`${BASE_URL}/api/auth/login`, {
+      method:'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ email, password })
     });
     const data = await res.json();
     if (res.ok) {
@@ -183,5 +186,8 @@ document.getElementById('loginForm').addEventListener('submit', async (ev) => {
       loginModal.style.display = 'none';
       window.location.href = 'main.html';
     } else alert(data.message || 'Login failed');
-  } catch (err) { console.error(err); alert('Login error'); }
+  } catch (err) {
+    console.error(err);
+    alert('Login error');
+  }
 });
